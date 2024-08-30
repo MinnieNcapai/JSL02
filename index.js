@@ -5,8 +5,14 @@ const welcomeMessage = () => {
 welcomeMessage();
 
 const displayWorkoutRoutine = () => {
-    const workoutInput = document.querySelector('#workoutInput').value;
+    const workoutInput = document.querySelector('#workoutInput').value.trim();
     const workoutList = document.querySelector('#workoutList');
+
+    // Check if the workout input field is empty. 
+    if (workoutInput.trim() === '') {
+        alert('Please enter a workout.');
+        return;
+    }
 
     // Get all existing workouts from the list.
     const existingWorkoutRoutine = workoutList.querySelectorAll('li');
@@ -27,8 +33,14 @@ document.querySelector('#submitWorkout').addEventListener('click', displayWorkou
 
 
 const addNewGoal = () => {
-    const goalInput = document.querySelector('#goalInput').value;
+    const goalInput = document.querySelector('#goalInput').value.trim();
     const goalList = document.querySelector('#goalList');
+
+    // Check if the goal input field is empty. 
+    if (goalInput.trim () === '') {
+        alert('Please enter a goal.');
+        return;
+    }
 
     //Check if the inputted goal already exists in the list. 
     const existingGoals = goalList.querySelectorAll('li');
